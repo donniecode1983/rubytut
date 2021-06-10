@@ -51,7 +51,7 @@ end
 
 group :development do
   # Use mysql as the database for Active Record
-  gem 'mysql2', '>= 0.4.4'
+  gem 'pg'
 
 end
 
