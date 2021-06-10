@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.0'
+ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.7'
@@ -52,7 +52,7 @@ end
 group :development do
   # Use mysql as the database for Active Record
   gem 'mysql2', '>= 0.4.4'
-  
+
 end
 
 group :test do
