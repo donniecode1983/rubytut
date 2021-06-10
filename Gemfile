@@ -49,6 +49,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :development do
+  # Use mysql as the database for Active Record
+  gem 'mysql2', '>= 0.4.4'
+  
+end
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
