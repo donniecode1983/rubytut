@@ -1,0 +1,11 @@
+
+<%# Build out Jumbotron START %>
+<div class="container-fluid py-5 bg-dark bg-gradient text-light rounded-3">
+<h1 class="display-5 fw-bold"><%= @friend.first_name %> <%= @friend.last_name %> </h1>
+<p class="col-md-8 fs-4">
+<%= @friend.email %> | <%= @friend.phone %> | <%= @friend.twitter %> </p>
+<%= link_to 'Edit', edit_friend_path(@friend), class:"btn btn-primary me-3" %> 
+<%= link_to 'Delete', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger me-3" %>
+<%= link_to 'Back', friends_path, class:"btn btn-secondary"  %>
+</div>
+<%# Build out Jumbotron END %>

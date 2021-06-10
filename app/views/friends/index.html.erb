@@ -1,0 +1,41 @@
+<% if user_signed_in? %>
+
+<h1>Friends</h1>
+<div class="table-responsive">
+<table class="table table-striped table-bordered table-hover">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Twitter</th>
+      <th scope="col" colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @friends.each do |friend| %>
+    <% if friend.user == current_user %>
+      <tr>
+        <td><%= link_to friend.first_name + friend.last_name, friend %></td>
+        <td><%= friend.email %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.twitter %></td>
+        <td align="center"><%= link_to 'Edit', edit_friend_path(friend) %></td>
+        <td align="center"><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-outline-danger" %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Friend', new_friend_path, class:"btn btn-secondary" %>
+
+<%# <button type="button" class="btn btn-primary">Primary</button> %>
+
+<% else %>
+ <%= render 'home/not_logged_in' %>
+<% end %>

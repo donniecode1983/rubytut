@@ -1,0 +1,1 @@
+sudo chown ubu:ubu -R .
